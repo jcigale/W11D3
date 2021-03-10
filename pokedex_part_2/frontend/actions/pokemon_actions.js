@@ -14,10 +14,12 @@ export const requestAllPokemon = () => (dispatch) => (
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
 )
 
-export const receiveOnePokemon = (pokemon) => {
+export const receiveOnePokemon = (pokemon_info) => {
   return {
     type: RECEIVE_ONE_POKEMON,
-    pokemon
+    pokemon: pokemon_info.pokemon,
+    moves: pokemon_info.moves,
+    items: pokemon_info.items
   }
 } 
 
